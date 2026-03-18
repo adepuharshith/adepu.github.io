@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talks — Harshith Kumar Adepu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .timeline { position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 54px; top: 8px; bottom: 8px;
+      width: 1px; background: var(--border);
+    }
+    .t-year-group { margin-bottom: 40px; }
+    .t-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--gold); margin-bottom: 18px;
+      position: relative; padding-left: 74px;
+    }
+    .t-year::before {
+      content: '';
+      position: absolute; left: 46px; top: 50%;
+      transform: translateY(-50%);
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--gold); border: 2px solid #fff;
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+
+    .talk-item {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 0 20px; margin-bottom: 14px;
+      align-items: start;
+    }
+    .talk-dot-col { display: flex; justify-content: center; padding-top: 6px; }
+    .talk-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--border); flex-shrink: 0;
+    }
+    .talk-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 16px 18px;
+      transition: border-color 0.18s;
+    }
+    .talk-card:hover { border-color: var(--gold-l); }
+    .talk-title {
+      font-size: 0.9rem; font-weight: 500;
+      color: var(--text); line-height: 1.5; margin-bottom: 5px;
+    }
+    .talk-venue { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+    .talk-type {
+      display: inline-block;
+      font-size: 0.66rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 1px 8px; border-radius: 100px;
+      margin-right: 6px; vertical-align: middle;
+    }
+    .type-talk   { background: #EAF2FA; color: #1A4A7A; }
+    .type-poster { background: #EAF4EC; color: #1F5C2A; }
+    .type-invited{ background: var(--gold-bg); color: #7A5F10; }
+
+    @media (max-width: 500px) {
+      .timeline::before { left: 0; }
+      .talk-item { grid-template-columns: 16px 1fr; gap: 0 12px; }
+      .t-year { padding-left: 24px; }
+      .t-year::before { left: -8px; }
+    }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<main class="page-sm">
+  <div class="eyebrow">Conferences &amp; Seminars</div>
+  <h1 class="page-title">Presentations</h1>
+  <div class="divider"></div>
+
+  <div class="timeline">
+
+    <div class="t-year-group">
+      <div class="t-year">2025</div>
+
+      <div class="talk-item">
+        <div class="talk-dot-col"><div class="talk-dot"></div></div>
+        <div class="talk-card">
+          <div class="talk-title">
+            <span class="talk-type type-talk">Talk</span>
+            Ultrasonic Evaluation of Internal Features in AM SS316L: Impact of Process-Induced Microstructure Heterogeneity
+          </div>
+          <div class="talk-venue">ASA Summer 2025 · Session: Wave Propagation and Aberration in Complex Media · New Orleans, LA</div>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-dot-col"><div class="talk-dot"></div></div>
+        <div class="talk-card">
+          <div class="talk-title">
+            <span class="talk-type type-talk">Talk</span>
+            Ultrasonic Evaluation of Internal Features in AM SS316L: Impact of Process-Induced Microstructure Heterogeneity
+          </div>
+          <div class="talk-venue">ASNT Research Symposium · Indianapolis, IN</div>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-dot-col"><div class="talk-dot"></div></div>
+        <div class="talk-card">
+          <div class="talk-title">
+            <span class="talk-type type-talk">Talk</span>
+            Process-Structure-Property Relationships for LPBF 316L Stainless Steel via Ultrasonic NDE
+          </div>
+          <div class="talk-venue">ASTM ICAM · Las Vegas, NV</div>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-dot-col"><div class="talk-dot"></div></div>
+        <div class="talk-card">
+          <div class="talk-title">
+            <span class="talk-type type-talk">Talk</span>
+            Ultrasonic Evaluation of Internal Features in AM SS316L: Impact of Process-Induced Microstructure Heterogeneity
+          </div>
+          <div class="talk-venue">ASA Fall 2025 · Honolulu, HI</div>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-dot-col"><div class="talk-dot"></div></div>
+        <div class="talk-card">
+          <div class="talk-title">
+            <span class="talk-type type-poster">Poster</span>
+            Ultrasonic Evaluation of Internal Features in AM SS316L: Impact of Process-Induced Microstructure Heterogeneity
+          </div>
+          <div class="talk-venue">ASA Summer 2025 · New Orleans, LA &nbsp;·&nbsp; <strong>2nd Place, Student Poster Competition</strong></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="t-year-group">
+      <div class="t-year">2024</div>
+
+      <div class="talk-item">
+        <div class="talk-dot-col"><div class="talk-dot"></div></div>
+        <div class="talk-card">
+          <div class="talk-title">
+            <span class="talk-type type-invited">Invited Talk</span>
+            Ultrasonic Evaluation of Additively Manufactured Components
+          </div>
+          <div class="talk-venue">Hybrid Manufacturing Joint Workshop — IIT Bombay &amp; Purdue · Mumbai, India</div>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-dot-col"><div class="talk-dot"></div></div>
+        <div class="talk-card">
+          <div class="talk-title">
+            <span class="talk-type type-talk">Talk</span>
+            Ultrasonic Evaluation of AM Components with Embedded Structures
+          </div>
+          <div class="talk-venue">ASA Summer 2024 · Session: Novel Methods and Applications in NDE · Ottawa, Canada</div>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-dot-col"><div class="talk-dot"></div></div>
+        <div class="talk-card">
+          <div class="talk-title">
+            <span class="talk-type type-talk">Talk</span>
+            A Practical Approach to Build an Ultrasonic Immersion Test Setup
+          </div>
+          <div class="talk-venue">ASA Fall 2024 · Session: Frugal Acoustics · Virtual</div>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-dot-col"><div class="talk-dot"></div></div>
+        <div class="talk-card">
+          <div class="talk-title">
+            <span class="talk-type type-poster">Poster</span>
+            Nondestructive Evaluation of Additively Manufactured Components with Internal Structures
+          </div>
+          <div class="talk-venue">ASTM ICAM 2024</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="nav.js"></script>
+</body>
+</html>
