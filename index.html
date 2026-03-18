@@ -6,624 +6,226 @@
   <title>Harshith Kumar Adepu — Ph.D. Candidate</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* ───── TOKENS ───── */
-    :root {
-      --bg:       #F4F2EE;
-      --surface:  #EDEAE4;
-      --border:   #D6D2C8;
-      --text:     #1C1A16;
-      --muted:    #6B6860;
-      --accent:   #7A6A52;
-      --accent-l: #A89478;
-      --nav-h:    56px;
-      --max:      960px;
-      --r:        6px;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Jost', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-    /* ───── NAV ───── */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(244, 242, 238, 0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      height: var(--nav-h);
-      display: flex; align-items: center;
-    }
-    .nav-inner {
-      max-width: var(--max); margin: 0 auto; width: 100%;
-      padding: 0 24px;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .nav-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem; font-weight: 600;
-      letter-spacing: 0.01em;
-      color: var(--text);
-      text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a {
-      font-size: 0.78rem; font-weight: 500;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--muted); text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--accent); }
-
-    /* hamburger */
-    .ham {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; border: none; background: none; padding: 4px;
-    }
-    .ham span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
-    .mobile-menu {
-      display: none; position: fixed; inset: var(--nav-h) 0 0 0;
-      background: var(--bg); z-index: 99;
-      flex-direction: column; align-items: center; justify-content: center; gap: 36px;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-size: 1.3rem; font-weight: 500; letter-spacing: 0.06em;
-      text-transform: uppercase; color: var(--text); text-decoration: none;
-    }
-
-    /* ───── LAYOUT HELPERS ───── */
-    .section { padding: 64px 24px; }
-    .section-alt { background: var(--surface); }
-    .wrap { max-width: var(--max); margin: 0 auto; }
-    .section-label {
-      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 6px;
-    }
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.9rem; font-weight: 700; line-height: 1.2;
-      margin-bottom: 32px;
-    }
-
-    /* ───── HERO ───── */
-    #about { padding-top: 72px; padding-bottom: 72px; }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 200px;
-      gap: 48px; align-items: center;
+      grid-template-columns: 1fr 196px;
+      gap: 52px; align-items: start;
+      margin-top: 8px;
     }
     .hero-name {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2.2rem, 5vw, 3.1rem);
       font-weight: 700; line-height: 1.1;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
-    .hero-title {
-      font-size: 0.95rem; color: var(--accent);
-      font-weight: 500; letter-spacing: 0.04em;
-      margin-bottom: 18px;
+    .hero-name .accent { color: var(--gold); }
+    .hero-role {
+      font-size: 0.88rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 22px;
     }
-    .hero-bio { color: var(--muted); font-size: 0.93rem; max-width: 580px; }
-    .hero-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
-    .link-pill {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 7px 16px; border-radius: 100px;
-      border: 1.5px solid var(--border);
-      color: var(--text); text-decoration: none;
-      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    .hero-bio {
+      color: var(--muted); font-size: 0.93rem;
+      line-height: 1.75; max-width: 520px;
     }
-    .link-pill:hover { border-color: var(--accent); color: var(--accent); background: rgba(122,106,82,0.05); }
+    .hero-bio + .hero-bio { margin-top: 12px; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
     .hero-photo {
-      width: 180px; height: 180px;
-      border-radius: 50%;
+      width: 180px; height: 180px; border-radius: 50%;
       background: var(--surface);
-      border: 2px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
+      border: 3px solid var(--border);
       overflow: hidden;
-      margin-left: auto;
+      display: flex; align-items: center; justify-content: center;
     }
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
     .hero-photo-placeholder {
-      font-size: 0.72rem; color: var(--muted); text-align: center;
-      padding: 12px; line-height: 1.6;
+      text-align: center; font-size: 0.7rem;
+      color: var(--muted); padding: 16px; line-height: 1.7;
     }
-    .hero-photo-placeholder code { font-size: 0.68rem; background: var(--border); padding: 1px 4px; border-radius: 3px; }
+    .hero-photo-placeholder code {
+      display: block; font-size: 0.68rem;
+      background: var(--surface); padding: 2px 5px;
+      border-radius: 4px; margin-top: 4px;
+    }
 
-    /* ───── RESEARCH ───── */
-    .research-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;
+    /* Stats row */
+    .stats-row {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 14px; margin-top: 48px;
     }
-    .research-card {
-      background: var(--bg);
+    .stat-card {
+      background: #fff;
       border: 1px solid var(--border);
       border-radius: var(--r);
-      padding: 24px;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      padding: 18px 16px;
+      text-align: center;
     }
-    .research-card:hover { border-color: var(--accent-l); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-    .rc-icon { font-size: 1.4rem; margin-bottom: 12px; }
-    .rc-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
-    .rc-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
-
-    /* ───── PUBLICATIONS ───── */
-    .pub-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-    .pub-item {
-      display: grid; grid-template-columns: 28px 1fr;
-      gap: 14px; align-items: start;
-      padding: 18px 20px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      transition: border-color 0.2s;
-    }
-    .pub-item:hover { border-color: var(--accent-l); }
-    .pub-num {
+    .stat-card:first-child { border-top: 3px solid var(--gold); }
+    .stat-num {
       font-family: 'Playfair Display', serif;
-      font-size: 1.1rem; font-weight: 700; color: var(--accent);
+      font-size: 1.8rem; font-weight: 700;
+      color: var(--text); line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); margin-top: 5px;
+    }
+
+    /* Quick nav cards */
+    .quick-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 14px; margin-top: 48px;
+    }
+    .quick-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 20px;
+      display: block;
+      transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+    }
+    .quick-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 18px rgba(26,43,74,0.08);
+      transform: translateY(-2px);
+    }
+    .qc-icon { font-size: 1.3rem; margin-bottom: 10px; }
+    .qc-label {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+    }
+    .qc-title {
+      font-size: 0.88rem; font-weight: 500; color: var(--text);
       line-height: 1.4;
     }
-    .pub-title { font-size: 0.9rem; font-weight: 500; line-height: 1.5; margin-bottom: 4px; }
-    .pub-meta { font-size: 0.8rem; color: var(--muted); }
-    .pub-meta a { color: var(--accent); text-decoration: none; }
-    .pub-meta a:hover { text-decoration: underline; }
-    .pub-badge {
-      display: inline-block;
-      font-size: 0.67rem; font-weight: 500; letter-spacing: 0.06em;
-      text-transform: uppercase; padding: 2px 8px;
-      border-radius: 100px; margin-left: 8px;
-      vertical-align: middle;
-    }
-    .badge-pub  { background: #E6EEE6; color: #3A6B3A; }
-    .badge-sub  { background: #EEE8E0; color: #7A6A52; }
-    .badge-prep { background: #EEEAEE; color: #6A5A7A; }
-
-    /* ───── TALKS ───── */
-    .talks-block { margin-bottom: 28px; }
-    .talk-year {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem; font-weight: 700; color: var(--accent);
-      margin-bottom: 12px;
-    }
-    .talk-list-inner { list-style: none; display: flex; flex-direction: column; gap: 10px; padding-left: 16px; border-left: 2px solid var(--border); }
-    .talk-item { font-size: 0.87rem; line-height: 1.55; }
-    .talk-item strong { font-weight: 500; }
-    .talk-venue { color: var(--muted); font-size: 0.8rem; }
-    .tag-invited {
-      display: inline-block; font-size: 0.67rem; font-weight: 500;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 1px 7px; border-radius: 100px; margin-left: 6px;
-      background: #E8EAF0; color: #4A5480; vertical-align: middle;
+    .qc-arr {
+      font-size: 0.8rem; color: var(--faint);
+      margin-top: 10px; display: block;
     }
 
-    /* ───── AWARDS ───── */
-    .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
-    .award-card {
-      padding: 20px; background: var(--bg);
-      border: 1px solid var(--border); border-radius: var(--r);
-      transition: border-color 0.2s;
-    }
-    .award-card:hover { border-color: var(--accent-l); }
-    .award-year { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
-    .award-name { font-size: 0.9rem; font-weight: 500; line-height: 1.4; }
-    .award-org  { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
-
-    /* ───── GALLERY ───── */
-    .gallery-strip {
-      display: flex; gap: 14px;
-      overflow-x: auto; scroll-snap-type: x mandatory;
-      padding-bottom: 12px;
-      scrollbar-width: thin; scrollbar-color: var(--border) transparent;
-    }
-    .gallery-strip::-webkit-scrollbar { height: 4px; }
-    .gallery-strip::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-    .gallery-item {
-      flex: 0 0 220px; height: 160px;
-      scroll-snap-align: start;
-      border-radius: var(--r); overflow: hidden;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      position: relative;
-    }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-    .gallery-placeholder {
-      text-align: center; padding: 12px;
-      font-size: 0.72rem; color: var(--muted); line-height: 1.6;
-    }
-    .gallery-placeholder code { font-size: 0.68rem; background: var(--border); padding: 1px 4px; border-radius: 3px; }
-    .gallery-caption {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.55));
-      color: #fff; font-size: 0.72rem; padding: 16px 10px 8px;
-      opacity: 0; transition: opacity 0.2s;
-    }
-    .gallery-item:hover .gallery-caption { opacity: 1; }
-    .gallery-hint { font-size: 0.78rem; color: var(--muted); margin-top: 12px; }
-    .gallery-hint code { font-size: 0.72rem; background: var(--border); padding: 1px 5px; border-radius: 3px; }
-
-    /* ───── CONTACT ───── */
-    .contact-wrap { text-align: center; max-width: 480px; margin: 0 auto; }
-    .contact-wrap p { color: var(--muted); margin-bottom: 28px; font-size: 0.93rem; }
-    .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
-
-    /* ───── FOOTER ───── */
-    footer {
-      text-align: center; padding: 24px;
-      font-size: 0.78rem; color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
-
-    /* ───── RESPONSIVE ───── */
-    @media (max-width: 680px) {
+    @media (max-width: 640px) {
       .hero-grid { grid-template-columns: 1fr; }
-      .hero-photo { width: 120px; height: 120px; margin: 0 auto 20px; order: -1; }
-      h2 { font-size: 1.5rem; }
-      .nav-links { display: none; }
-      .ham { display: flex; }
-      .section { padding: 48px 20px; }
-      #about { padding-top: 52px; padding-bottom: 52px; }
-      .awards-grid { grid-template-columns: 1fr 1fr; }
+      .hero-photo { width: 110px; height: 110px; margin: 0 auto 20px; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .quick-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 400px) {
-      .awards-grid { grid-template-columns: 1fr; }
+      .quick-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+<div id="nav-placeholder"></div>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="#about" class="nav-name">Harshith K. Adepu</a>
-    <ul class="nav-links">
-      <li><a href="#research">Research</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#talks">Talks</a></li>
-      <li><a href="#awards">Awards</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="ham" onclick="toggleMenu()" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<main class="page">
 
-<!-- Mobile menu overlay -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#research"     onclick="toggleMenu()">Research</a>
-  <a href="#publications" onclick="toggleMenu()">Publications</a>
-  <a href="#talks"        onclick="toggleMenu()">Talks</a>
-  <a href="#awards"       onclick="toggleMenu()">Awards</a>
-  <a href="#gallery"      onclick="toggleMenu()">Gallery</a>
-  <a href="#contact"      onclick="toggleMenu()">Contact</a>
-</div>
-
-<!-- ── HERO ── -->
-<section class="section" id="about">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <div class="section-label">Ph.D. Candidate · Purdue University</div>
-        <h1 class="hero-name">Harshith Kumar<br>Adepu</h1>
-        <div class="hero-title">Mechanical Engineering &nbsp;·&nbsp; Ultrasonic NDE &amp; Additive Manufacturing</div>
-        <p class="hero-bio">
-          I develop ultrasonic nondestructive evaluation methods for additively manufactured metals and complex media.
-          My research integrates immersion ultrasound experiments with effective-medium theory and COMSOL modeling
-          to guide NDE strategies for space materials, under an NSF Future Manufacturing grant in collaboration with NASA.
-          I am a Bilsland Dissertation Fellow at Purdue's IMPULSE Lab.
-        </p>
-        <div class="hero-links">
-          <a class="link-pill" href="mailto:adepu@purdue.edu">✉ Email</a>
-          <a class="link-pill" href="https://linkedin.com/in/harshith-adepu" target="_blank">in LinkedIn</a>
-          <a class="link-pill" href="https://scholar.google.com/citations?user=MUFc8WYAAAAJ&hl=en" target="_blank">↗ Google Scholar</a>
-        </div>
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Ph.D. Candidate · Purdue University</div>
+      <h1 class="hero-name">Harshith<br>Kumar <span class="accent">Adepu</span></h1>
+      <div class="hero-role">Mechanical Engineering &nbsp;·&nbsp; Ultrasonic NDE &amp; Additive Manufacturing</div>
+      <p class="hero-bio">
+        I develop ultrasonic nondestructive evaluation methods for additively manufactured metals and
+        complex heterogeneous media. My work integrates custom immersion ultrasound experiments with
+        effective-medium theory and COMSOL simulations to understand and predict how waves propagate
+        through process-induced microstructures.
+      </p>
+      <p class="hero-bio">
+        Current research focuses on regolith–aluminum metal matrix composites for space applications,
+        under an NSF Future Manufacturing grant in collaboration with NASA. I am a
+        <strong>Bilsland Dissertation Fellow</strong> and the founding researcher of Purdue's IMPULSE Lab.
+      </p>
+      <div class="hero-links">
+        <a class="pill" href="mailto:adepu@purdue.edu">✉ adepu@purdue.edu</a>
+        <a class="pill" href="https://linkedin.com/in/harshith-adepu" target="_blank">in LinkedIn</a>
+        <!-- Replace with your actual Google Scholar URL -->
+        <a class="pill" href="https://scholar.google.com" target="_blank">↗ Google Scholar</a>
+        <a class="pill pill-filled" href="contact.html">Get in touch</a>
       </div>
+    </div>
+
+    <div>
       <div class="hero-photo">
         <!--
-          To add your photo:
-          1. Create a folder: assets/
-          2. Place your photo there, e.g. assets/profile.jpg
-          3. Replace the div below with: <img src="assets/profile.jpg" alt="Harshith Kumar Adepu">
+          Add your profile photo:
+          1. Put it in assets/profile.jpg
+          2. Replace this div with: <img src="assets/profile.jpg" alt="Harshith Kumar Adepu">
         -->
-        <img src="assets/profile.jpg" alt="Harshith Kumar Adepu">
+        <div class="hero-photo-placeholder">
+          Your photo here
+          <code>assets/profile.jpg</code>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ── RESEARCH ── -->
-<section class="section section-alt" id="research">
-  <div class="wrap">
-    <div class="section-label">What I Work On</div>
-    <h2>Research</h2>
-    <div class="research-grid">
-      <div class="research-card">
-        <div class="rc-icon">🔬</div>
-        <div class="rc-title">Ultrasonic NDE for AM Metals</div>
-        <p class="rc-desc">Wave-speed, attenuation, and backscatter measurements on LPBF 316L stainless steel, establishing process-structure-property relationships via nondestructive evaluation.</p>
-      </div>
-      <div class="research-card">
-        <div class="rc-icon">🛸</div>
-        <div class="rc-title">Space Materials (NSF / NASA)</div>
-        <p class="rc-desc">Modeling ultrasonic wave propagation in regolith–aluminum metal matrix composites using effective-medium theory and COMSOL, to enable NDE strategies for in-space manufacturing.</p>
-      </div>
-      <div class="research-card">
-        <div class="rc-icon">⚙️</div>
-        <div class="rc-title">Custom Immersion Ultrasound System</div>
-        <p class="rc-desc">Designed and built a frugal laboratory-grade immersion ultrasonic test setup, now integrated into Purdue's ME496 NDE course and adopted as standard at the MMRL.</p>
-      </div>
-      <div class="research-card">
-        <div class="rc-icon">💧</div>
-        <div class="rc-title">Ultrasonic Sensing in Thermal Systems</div>
-        <p class="rc-desc">Non-invasive ultrasonic detection of liquid-air interfaces and visualization of liquid-vapor dynamics in operating heat pipes, in collaboration with the Weibel Lab at Purdue.</p>
-      </div>
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-num">7</div>
+      <div class="stat-label">Publications</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">8</div>
+      <div class="stat-label">Talks &amp; Posters</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">28+</div>
+      <div class="stat-label">Students Mentored</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">3.74</div>
+      <div class="stat-label">GPA / 4.00</div>
     </div>
   </div>
-</section>
 
-<!-- ── PUBLICATIONS ── -->
-<section class="section" id="publications">
-  <div class="wrap">
-    <div class="section-label">Peer-Reviewed Work</div>
-    <h2>Publications</h2>
-    <ul class="pub-list">
-
-      <li class="pub-item">
-        <div class="pub-num">1</div>
-        <div>
-          <div class="pub-title">
-            A practical and frugal approach to building an ultrasonic immersion test setup
-            <span class="pub-badge badge-pub">Published</span>
-          </div>
-          <div class="pub-meta">
-            Adepu HK, O'Donnell CM, Kim JY, Sotelo LD ·
-            <em>JASA Express Letters</em>, vol. 5, no. 9, 2025 ·
-            <a href="https://doi.org/10.1121/10.0039221" target="_blank">DOI ↗</a>
-          </div>
-        </div>
-      </li>
-
-      <li class="pub-item">
-        <div class="pub-num">2</div>
-        <div>
-          <div class="pub-title">
-            Nondestructive process-structure-property assessment of laser powder bed fusion 316L stainless steel
-            <span class="pub-badge badge-sub">Submitted</span>
-          </div>
-          <div class="pub-meta">
-            Adepu HK, Pandit PP, Birkenmeyer JR, Hernandez JA, Sotelo LD ·
-            <em>Additive Manufacturing</em>, 2025
-          </div>
-        </div>
-      </li>
-
-      <li class="pub-item">
-        <div class="pub-num">3</div>
-        <div>
-          <div class="pub-title">
-            Non-invasive ultrasonic technique for detection of liquid-air interface in enclosed volumes
-            <span class="pub-badge badge-prep">In Prep</span>
-          </div>
-          <div class="pub-meta">Singh S, Adepu HK, Sotelo LD, Weibel JA · 2025</div>
-        </div>
-      </li>
-
-      <li class="pub-item">
-        <div class="pub-num">4</div>
-        <div>
-          <div class="pub-title">
-            Ultrasonic visualization of liquid-vapor interface dynamics in operating heat pipes
-            <span class="pub-badge badge-prep">In Prep</span>
-          </div>
-          <div class="pub-meta">Singh S, Adepu HK, Sotelo LD, Weibel JA · 2025</div>
-        </div>
-      </li>
-
-      <li class="pub-item">
-        <div class="pub-num">5</div>
-        <div>
-          <div class="pub-title">
-            Boiling performance enhancement for confined multi-liquid jet impingement using a novel wick design
-            <span class="pub-badge badge-prep">In Prep</span>
-          </div>
-          <div class="pub-meta">Sahu G, Adepu HK, Sun L, Narita K, Sotelo LD, Wei T · 2025</div>
-        </div>
-      </li>
-
-      <li class="pub-item">
-        <div class="pub-num">6</div>
-        <div>
-          <div class="pub-title">
-            Mechanics of dynamic and deformable DNA nanostructures
-            <span class="pub-badge badge-pub">Published</span>
-          </div>
-          <div class="pub-meta">
-            Li R, Madhvacharyula AS, Du Y, Adepu HK, Choi JH ·
-            <em>Chemical Science</em>, vol. 14, no. 30, pp. 8018–8046, 2023 ·
-            <a href="https://doi.org/10.1039/D3SC01793A" target="_blank">DOI ↗</a>
-          </div>
-        </div>
-      </li>
-
-      <li class="pub-item">
-        <div class="pub-num">7</div>
-        <div>
-          <div class="pub-title">
-            Motility of synthetic cells from engineered lipids
-            <span class="pub-badge badge-pub">Published</span>
-          </div>
-          <div class="pub-meta">
-            Shrivastava A, Du Y, Adepu HK, et al. ·
-            <em>ACS Synthetic Biology</em>, vol. 12, no. 10, pp. 2789–2801, 2023 ·
-            <a href="https://doi.org/10.1021/acssynbio.3c00271" target="_blank">DOI ↗</a>
-          </div>
-        </div>
-      </li>
-
-    </ul>
+  <!-- Quick nav -->
+  <div class="quick-grid">
+    <a class="quick-card" href="research.html">
+      <div class="qc-icon">🔬</div>
+      <div class="qc-label">Work</div>
+      <div class="qc-title">Ultrasonic NDE, AM metals, space materials</div>
+      <span class="qc-arr">View research →</span>
+    </a>
+    <a class="quick-card" href="publications.html">
+      <div class="qc-icon">📄</div>
+      <div class="qc-label">Papers</div>
+      <div class="qc-title">3 published · 1 submitted · 3 in prep</div>
+      <span class="qc-arr">View publications →</span>
+    </a>
+    <a class="quick-card" href="talks.html">
+      <div class="qc-icon">🎤</div>
+      <div class="qc-label">Talks</div>
+      <div class="qc-title">ASA, ASNT, ASTM ICAM, invited lecture</div>
+      <span class="qc-arr">View presentations →</span>
+    </a>
+    <a class="quick-card" href="awards.html">
+      <div class="qc-icon">🏅</div>
+      <div class="qc-label">Honors</div>
+      <div class="qc-title">Bilsland Fellow · ASA 2nd place · NIT merit</div>
+      <span class="qc-arr">View awards →</span>
+    </a>
+    <a class="quick-card" href="gallery.html">
+      <div class="qc-icon">📷</div>
+      <div class="qc-label">Gallery</div>
+      <div class="qc-title">Conference presentations &amp; lab moments</div>
+      <span class="qc-arr">View gallery →</span>
+    </a>
+    <a class="quick-card" href="contact.html">
+      <div class="qc-icon">✉</div>
+      <div class="qc-label">Contact</div>
+      <div class="qc-title">Collaborations &amp; research inquiries welcome</div>
+      <span class="qc-arr">Get in touch →</span>
+    </a>
   </div>
-</section>
 
-<!-- ── TALKS ── -->
-<section class="section section-alt" id="talks">
-  <div class="wrap">
-    <div class="section-label">Conferences &amp; Seminars</div>
-    <h2>Presentations</h2>
+</main>
 
-    <div class="talks-block">
-      <div class="talk-year">2025</div>
-      <ul class="talk-list-inner">
-        <li class="talk-item">
-          <strong>Ultrasonic Evaluation of Internal Features in AM SS316L: Impact of Process-Induced Microstructure Heterogeneity</strong><br>
-          <span class="talk-venue">ASA Summer 2025 · New Orleans, LA &nbsp;|&nbsp; ASNT Research Symposium · Indianapolis, IN &nbsp;|&nbsp; ASA Fall 2025 · Honolulu, HI</span>
-        </li>
-        <li class="talk-item">
-          <strong>Process-Structure-Property Relationships for LPBF 316L SS via Ultrasonic NDE</strong><br>
-          <span class="talk-venue">ASTM ICAM · Las Vegas, NV</span>
-        </li>
-      </ul>
-    </div>
-
-    <div class="talks-block">
-      <div class="talk-year">2024</div>
-      <ul class="talk-list-inner">
-        <li class="talk-item">
-          <strong>Ultrasonic Evaluation of Additively Manufactured Components</strong>
-          <span class="tag-invited">Invited</span><br>
-          <span class="talk-venue">Hybrid Manufacturing Joint Workshop — IIT Bombay &amp; Purdue · Mumbai, India</span>
-        </li>
-        <li class="talk-item">
-          <strong>Ultrasonic Evaluation of AM Components with Embedded Structures</strong><br>
-          <span class="talk-venue">ASA Summer 2024 · Ottawa, Canada</span>
-        </li>
-        <li class="talk-item">
-          <strong>A Practical Approach to Build an Ultrasonic Immersion Test Setup</strong><br>
-          <span class="talk-venue">ASA Fall 2024 (Virtual) — Frugal Acoustics Session</span>
-        </li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── AWARDS ── -->
-<section class="section" id="awards">
-  <div class="wrap">
-    <div class="section-label">Recognition</div>
-    <h2>Awards &amp; Honors</h2>
-    <div class="awards-grid">
-      <div class="award-card">
-        <div class="award-year">2026</div>
-        <div class="award-name">Bilsland Dissertation Fellowship</div>
-        <div class="award-org">Purdue University</div>
-      </div>
-      <div class="award-card">
-        <div class="award-year">2025</div>
-        <div class="award-name">2nd Place — Student Poster Competition</div>
-        <div class="award-org">Acoustical Society of America</div>
-      </div>
-      <div class="award-card">
-        <div class="award-year">2023</div>
-        <div class="award-name">IRCC Germany Travel Award</div>
-        <div class="award-org">TU Dresden &amp; HKA, Germany</div>
-      </div>
-      <div class="award-card">
-        <div class="award-year">2019–21</div>
-        <div class="award-name">Merit Scholarship (×3)</div>
-        <div class="award-org">NIT Warangal — Top 3, Dept. of ME</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── GALLERY ── -->
-<section class="section section-alt" id="gallery">
-  <div class="wrap">
-    <div class="section-label">At Conferences</div>
-    <h2>Gallery</h2>
-    <div class="gallery-strip">
-      <!--
-        TO ADD YOUR PHOTOS:
-        1. Create an assets/ folder in the same directory as index.html
-        2. Copy your conference photos there, e.g. assets/conf1.jpg, assets/conf2.jpg, etc.
-        3. For each photo, replace the <div class="gallery-item">…</div> block below with:
-
-          <div class="gallery-item">
-            <img src="assets/conf1.jpg" alt="ASA Summer 2025, New Orleans">
-            <div class="gallery-caption">ASA Summer 2025 · New Orleans, LA</div>
-          </div>
-      -->
-      <div class="gallery-item">
-        <div class="gallery-placeholder">📷<br>Photo 1<br><code>assets/conf1.jpg</code></div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-placeholder">📷<br>Photo 2<br><code>assets/conf2.jpg</code></div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-placeholder">📷<br>Photo 3<br><code>assets/conf3.jpg</code></div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-placeholder">📷<br>Photo 4<br><code>assets/conf4.jpg</code></div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-placeholder">📷<br>Photo 5<br><code>assets/conf5.jpg</code></div>
-      </div>
-    </div>
-    <p class="gallery-hint">
-      Scroll → to see more &nbsp;·&nbsp;
-      Replace placeholder <code>&lt;div&gt;</code>s with <code>&lt;img&gt;</code> tags pointing to your photos
-    </p>
-  </div>
-</section>
-
-<!-- ── CONTACT ── -->
-<section class="section" id="contact">
-  <div class="wrap">
-    <div class="contact-wrap">
-      <div class="section-label" style="text-align:center">Get In Touch</div>
-      <h2 style="text-align:center; margin-bottom:14px">Contact</h2>
-      <p>
-        Happy to discuss research collaborations, NDE questions, or opportunities
-        in ultrasonic evaluation and additive manufacturing.
-      </p>
-      <div class="contact-links">
-        <a class="link-pill" href="mailto:adepu@purdue.edu">✉ adepu@purdue.edu</a>
-        <a class="link-pill" href="https://linkedin.com/in/harshith-adepu" target="_blank">in LinkedIn</a>
-        <a class="link-pill" href="https://scholar.google.com" target="_blank">↗ Google Scholar</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2025 Harshith Kumar Adepu &nbsp;·&nbsp; Purdue University
-</footer>
-
-<script>
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-  }
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', function(e) {
-    const menu = document.getElementById('mobileMenu');
-    if (menu.classList.contains('open') &&
-        !e.target.closest('nav') &&
-        !e.target.closest('#mobileMenu')) {
-      menu.classList.remove('open');
-    }
-  });
-</script>
-
+<div id="footer-placeholder"></div>
+<script src="nav.js"></script>
 </body>
 </html>
