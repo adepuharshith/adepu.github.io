@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Harshith Kumar Adepu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .g-item {
+      border-radius: var(--r);
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      aspect-ratio: 4 / 3;
+      position: relative;
+      cursor: pointer;
+    }
+    .g-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .g-item:hover img { transform: scale(1.04); }
+    .g-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(26,43,74,0.75));
+      color: #fff; font-size: 0.75rem; line-height: 1.4;
+      padding: 20px 10px 9px;
+      opacity: 0; transition: opacity 0.22s;
+    }
+    .g-item:hover .g-caption { opacity: 1; }
+
+    /* placeholder */
+    .g-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 16px; text-align: center;
+      color: var(--muted);
+    }
+    .g-ph-icon { font-size: 1.6rem; margin-bottom: 8px; opacity: 0.5; }
+    .g-ph-label { font-size: 0.72rem; line-height: 1.6; }
+    .g-ph-code {
+      font-size: 0.68rem; background: var(--border);
+      padding: 2px 6px; border-radius: 4px; margin-top: 4px;
+      display: inline-block; font-family: monospace;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none; position: fixed; inset: 0;
+      background: rgba(10, 16, 30, 0.88);
+      z-index: 200; align-items: center; justify-content: center;
+      padding: 24px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: min(860px, 90vw);
+      max-height: 80vh;
+      border-radius: var(--r);
+      object-fit: contain;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    }
+    .lb-close {
+      position: fixed; top: 20px; right: 24px;
+      color: #fff; font-size: 1.6rem; cursor: pointer;
+      background: none; border: none; line-height: 1;
+      opacity: 0.75; transition: opacity 0.18s;
+    }
+    .lb-close:hover { opacity: 1; }
+    .lb-caption {
+      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.75); font-size: 0.82rem;
+      background: rgba(0,0,0,0.4); padding: 6px 16px; border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    /* How-to note */
+    .howto {
+      margin-top: 36px;
+      background: var(--gold-bg);
+      border: 1px solid #E8D48A;
+      border-radius: var(--r);
+      padding: 18px 20px;
+      font-size: 0.83rem; color: #5A4510; line-height: 1.7;
+    }
+    .howto strong { color: #3A2D0A; }
+    .howto code {
+      font-size: 0.78rem; background: rgba(0,0,0,0.06);
+      padding: 1px 5px; border-radius: 3px;
+    }
+
+    @media (max-width: 560px) {
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 380px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<main class="page">
+  <div class="eyebrow">At Conferences &amp; In the Lab</div>
+  <h1 class="page-title">Gallery</h1>
+  <div class="divider"></div>
+
+  <div class="gallery-grid">
+    <!--
+      TO ADD YOUR PHOTOS — for each photo, replace a placeholder block with:
+
+      <div class="g-item" onclick="openLB('assets/conf1.jpg', 'ASA Summer 2025 · New Orleans, LA')">
+        <img src="assets/conf1.jpg" alt="ASA Summer 2025">
+        <div class="g-caption">ASA Summer 2025 · New Orleans, LA</div>
+      </div>
+    -->
+
+    <div class="g-item">
+      <div class="g-placeholder">
+        <div class="g-ph-icon">📷</div>
+        <div class="g-ph-label">Conference photo<div class="g-ph-code">assets/conf1.jpg</div></div>
+      </div>
+    </div>
+
+    <div class="g-item">
+      <div class="g-placeholder">
+        <div class="g-ph-icon">📷</div>
+        <div class="g-ph-label">Conference photo<div class="g-ph-code">assets/conf2.jpg</div></div>
+      </div>
+    </div>
+
+    <div class="g-item">
+      <div class="g-placeholder">
+        <div class="g-ph-icon">📷</div>
+        <div class="g-ph-label">Conference photo<div class="g-ph-code">assets/conf3.jpg</div></div>
+      </div>
+    </div>
+
+    <div class="g-item">
+      <div class="g-placeholder">
+        <div class="g-ph-icon">📷</div>
+        <div class="g-ph-label">Conference photo<div class="g-ph-code">assets/conf4.jpg</div></div>
+      </div>
+    </div>
+
+    <div class="g-item">
+      <div class="g-placeholder">
+        <div class="g-ph-icon">📷</div>
+        <div class="g-ph-label">Lab photo<div class="g-ph-code">assets/lab1.jpg</div></div>
+      </div>
+    </div>
+
+    <div class="g-item">
+      <div class="g-placeholder">
+        <div class="g-ph-icon">📷</div>
+        <div class="g-ph-label">Lab photo<div class="g-ph-code">assets/lab2.jpg</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="howto">
+    <strong>How to add your photos:</strong><br>
+    1. Create an <code>assets/</code> folder next to <code>index.html</code> in your repo.<br>
+    2. Copy your photos there — e.g. <code>assets/conf1.jpg</code>, <code>assets/conf2.jpg</code> …<br>
+    3. In this file, replace each placeholder <code>&lt;div class="g-item"&gt;</code> with the <code>&lt;img&gt;</code> version shown in the comments above.<br>
+    4. Update the caption text with the event name and location.
+  </div>
+</main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLB()">
+  <button class="lb-close" onclick="closeLB()">✕</button>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-caption" id="lb-caption"></div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="nav.js"></script>
+<script>
+  function openLB(src, caption) {
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lb-caption').textContent = caption;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLB() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLB(); });
+</script>
+</body>
+</html>
