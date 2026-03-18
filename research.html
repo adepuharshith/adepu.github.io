@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research — Harshith Kumar Adepu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .project-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 26px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .project-card.featured {
+      border-left: 3px solid var(--gold);
+    }
+    .project-card:hover { border-color: var(--gold-l); box-shadow: 0 4px 18px rgba(26,43,74,0.07); }
+    .pc-tag {
+      display: inline-block;
+      font-size: 0.66rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 2px 9px; border-radius: 100px;
+      background: var(--gold-bg); color: #7A5F10;
+      margin-bottom: 12px;
+    }
+    .pc-tag.tag-nsf { background: #E6EEF8; color: #1A3C70; }
+    .pc-tag.tag-lab { background: #EAF2E8; color: #2A5030; }
+    .pc-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--text); margin-bottom: 10px; line-height: 1.3;
+    }
+    .pc-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.7; }
+    .pc-tools {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px;
+    }
+    .pc-tool {
+      font-size: 0.7rem; font-weight: 500;
+      padding: 2px 8px; border-radius: 4px;
+      background: var(--surface); color: var(--muted);
+    }
+
+    /* Skills section */
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 0; }
+    .skill-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 18px;
+    }
+    .skill-cat {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .skill-list { font-size: 0.83rem; color: var(--muted); line-height: 1.75; }
+
+    @media (max-width: 640px) {
+      .project-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 400px) {
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<main class="page">
+  <div class="eyebrow">What I Work On</div>
+  <h1 class="page-title">Research</h1>
+  <div class="divider"></div>
+
+  <div class="project-grid">
+
+    <div class="project-card featured">
+      <div class="pc-tag tag-nsf">NSF + NASA</div>
+      <div class="pc-title">Ultrasonic NDE for Space Materials</div>
+      <p class="pc-desc">
+        Modeling and measuring ultrasonic wave propagation in regolith–aluminum metal matrix composites
+        (MMC) to develop NDE strategies for in-space and extraterrestrial additive manufacturing.
+        Integrates effective-medium theory with COMSOL simulations and immersion measurements
+        across a range of particulate volume fractions.
+      </p>
+      <div class="pc-tools">
+        <span class="pc-tool">COMSOL Multiphysics</span>
+        <span class="pc-tool">Effective-medium theory</span>
+        <span class="pc-tool">Backscatter</span>
+        <span class="pc-tool">Attenuation</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="pc-tag">LPBF 316L Stainless Steel</div>
+      <div class="pc-title">Process–Structure–Property via Ultrasound</div>
+      <p class="pc-desc">
+        Systematic study of how laser powder bed fusion process parameters (laser power, scan speed,
+        hatch spacing) determine microstructure and how those microstructures manifest in ultrasonic
+        wave speed, attenuation, and backscatter. Establishes a nondestructive route to the
+        process–structure–property triangle.
+      </p>
+      <div class="pc-tools">
+        <span class="pc-tool">LPBF</span>
+        <span class="pc-tool">Wave speed</span>
+        <span class="pc-tool">EBSD</span>
+        <span class="pc-tool">XCT</span>
+        <span class="pc-tool">SEM/EDS</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="pc-tag tag-lab">Lab Infrastructure</div>
+      <div class="pc-title">Frugal Ultrasonic Immersion Test System</div>
+      <p class="pc-desc">
+        Designed and built a low-cost, laboratory-grade immersion ultrasound system from the ground up.
+        Documented as an open methodology now integrated into Purdue's ME496 NDE course (60+ students)
+        and adopted as standard instrumentation at the Purdue MMRL.
+        Published in <em>JASA Express Letters</em>, 2025.
+      </p>
+      <div class="pc-tools">
+        <span class="pc-tool">Instrumentation</span>
+        <span class="pc-tool">Motion control</span>
+        <span class="pc-tool">Python</span>
+        <span class="pc-tool">Transducer calibration</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="pc-tag">Thermal Systems</div>
+      <div class="pc-title">Ultrasonic Sensing in Heat Pipes</div>
+      <p class="pc-desc">
+        Non-invasive detection and visualization of liquid-air and liquid-vapor interfaces in enclosed
+        volumes and operating heat pipes using pulse-echo ultrasound.
+        Enables real-time, in-situ monitoring of two-phase flow without optical access.
+        Collaboration with the Weibel Lab at Purdue.
+      </p>
+      <div class="pc-tools">
+        <span class="pc-tool">Pulse-echo</span>
+        <span class="pc-tool">Two-phase flow</span>
+        <span class="pc-tool">Signal processing</span>
+        <span class="pc-tool">Python</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Skills -->
+  <div style="margin-top: 56px;">
+    <div class="eyebrow">Capabilities</div>
+    <h2 class="page-title" style="font-size: 1.5rem; margin-bottom: 24px;">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-cat">Programming</div>
+        <div class="skill-list">Python (NumPy, SciPy, Matplotlib, Pandas)<br>MATLAB · Mathematica · ImageJ</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Simulation</div>
+        <div class="skill-list">COMSOL Multiphysics<br>Heat Transfer · Structural Mechanics · Coupling</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Signal Processing</div>
+        <div class="skill-list">FFT · Filtering · Gaussian fitting<br>Time &amp; frequency domain · 2D/3D visualization</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Characterization</div>
+        <div class="skill-list">X-ray CT · SEM · EDS · EBSD<br>Confocal microscopy · Microhardness · AFM</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Additive Manufacturing</div>
+        <div class="skill-list">LPBF process &amp; optimization<br>Heat treatment · Electropolishing · FDM</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Standards</div>
+        <div class="skill-list">ASTM E317 · ASTM E1003<br>Ultrasonic &amp; materials testing standards</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="nav.js"></script>
+</body>
+</html>
