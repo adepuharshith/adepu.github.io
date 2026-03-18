@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Awards — Harshith Kumar Adepu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .award-list { display: flex; flex-direction: column; gap: 14px; }
+    .award-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 22px 24px;
+      display: grid; grid-template-columns: 64px 1fr;
+      gap: 20px; align-items: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .award-item:hover { border-color: var(--gold-l); box-shadow: 0 3px 16px rgba(26,43,74,0.06); }
+    .award-item.top { border-left: 3px solid var(--gold); }
+    .award-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 700; color: var(--gold);
+      text-align: center; line-height: 1;
+    }
+    .award-year-sub { font-size: 0.7rem; color: var(--faint); text-align: center; margin-top: 2px; font-family: 'Jost', sans-serif; }
+    .award-name {
+      font-size: 0.95rem; font-weight: 500; color: var(--text);
+      margin-bottom: 4px; line-height: 1.4;
+    }
+    .award-org { font-size: 0.82rem; color: var(--muted); }
+    .award-desc { font-size: 0.82rem; color: var(--muted); margin-top: 6px; line-height: 1.55; }
+
+    /* Education section */
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .edu-card {
+      background: #fff;
+      border: 1px solid var(--border); border-radius: var(--r);
+      padding: 22px 24px;
+    }
+    .edu-degree {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700; color: var(--text);
+      margin-bottom: 4px;
+    }
+    .edu-inst { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-bottom: 10px; }
+    .edu-detail { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+    .edu-years {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+    }
+
+    @media (max-width: 500px) {
+      .award-item { grid-template-columns: 48px 1fr; gap: 14px; padding: 16px 18px; }
+      .edu-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<main class="page-sm">
+  <div class="eyebrow">Recognition</div>
+  <h1 class="page-title">Awards &amp; Honors</h1>
+  <div class="divider"></div>
+
+  <div class="award-list">
+
+    <div class="award-item top">
+      <div>
+        <div class="award-year">2026</div>
+      </div>
+      <div>
+        <div class="award-name">Bilsland Dissertation Fellowship</div>
+        <div class="award-org">Purdue University</div>
+        <div class="award-desc">Prestigious fellowship awarded to doctoral candidates in the final stages of dissertation completion, recognizing research excellence.</div>
+      </div>
+    </div>
+
+    <div class="award-item">
+      <div>
+        <div class="award-year">2025</div>
+      </div>
+      <div>
+        <div class="award-name">2nd Place — Student Poster Competition</div>
+        <div class="award-org">Acoustical Society of America (ASA)</div>
+        <div class="award-desc">Awarded for research talk and poster presentation by the Biomedical Acoustics Technical Committee at the ASA Annual Conference.</div>
+      </div>
+    </div>
+
+    <div class="award-item">
+      <div>
+        <div class="award-year">2023</div>
+      </div>
+      <div>
+        <div class="award-name">IRCC Germany Travel Award</div>
+        <div class="award-org">TU Dresden &amp; Hochschule Karlsruhe, Germany</div>
+        <div class="award-desc">Supported participation in the International Refrigeration and Compressor Course, where I designed a refrigeration system for an ice-cream cart meeting European and U.S. standards.</div>
+      </div>
+    </div>
+
+    <div class="award-item">
+      <div>
+        <div class="award-year">2019</div>
+        <div class="award-year-sub">– 2021</div>
+      </div>
+      <div>
+        <div class="award-name">Merit Scholarship (Three Consecutive Years)</div>
+        <div class="award-org">National Institute of Technology Warangal, India</div>
+        <div class="award-desc">Awarded for ranking among the top three students in the Department of Mechanical Engineering for three consecutive academic years. Final GPA: 9.3/10.00.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Education -->
+  <div style="margin-top: 56px;">
+    <div class="eyebrow">Background</div>
+    <h2 class="page-title" style="font-size: 1.5rem; margin-bottom: 24px;">Education</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-years">2022 – 2026</div>
+        <div class="edu-degree">Ph.D., Mechanical Engineering</div>
+        <div class="edu-inst">Purdue University</div>
+        <div class="edu-detail">
+          GPA: 3.74 / 4.00<br>
+          Bilsland Dissertation Fellow<br>
+          Advisor: Dr. Luz D. Sotelo<br><br>
+          <em>Thesis: Ultrasonic Evaluation of Additively Manufactured Metal-Ceramic Composites for Space Applications</em>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-years">2017 – 2021</div>
+        <div class="edu-degree">B.S., Mechanical Engineering</div>
+        <div class="edu-inst">NIT Warangal, India</div>
+        <div class="edu-detail">
+          GPA: 9.3 / 10.00<br>
+          Three-time merit scholarship recipient<br>
+          Ranked in top 3, Dept. of Mechanical Engineering
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="nav.js"></script>
+</body>
+</html>
