@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Harshith Kumar Adepu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 40px; }
+    .contact-card {
+      background: #fff;
+      border: 1px solid var(--border); border-radius: var(--r);
+      padding: 22px 24px;
+      display: flex; align-items: center; gap: 16px;
+      text-decoration: none; color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.18s;
+    }
+    .contact-card:hover {
+      border-color: var(--gold); color: var(--gold);
+      box-shadow: 0 4px 18px rgba(26,43,74,0.07);
+      transform: translateY(-2px);
+    }
+    .cc-icon {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--gold-bg); border: 1px solid #E8D48A;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .cc-label {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 3px;
+    }
+    .cc-value { font-size: 0.88rem; font-weight: 500; color: var(--text); line-height: 1.3; }
+
+    /* Affiliation box */
+    .affil-box {
+      background: #fff;
+      border: 1px solid var(--border); border-radius: var(--r);
+      padding: 24px;
+    }
+    .affil-title {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+    }
+    .affil-row { display: flex; gap: 12px; margin-bottom: 12px; align-items: start; }
+    .affil-bullet {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold); margin-top: 8px; flex-shrink: 0;
+    }
+    .affil-text { font-size: 0.87rem; color: var(--muted); line-height: 1.55; }
+    .affil-text strong { color: var(--text); font-weight: 500; }
+
+    /* Note box */
+    .note-box {
+      background: var(--gold-bg);
+      border: 1px solid #E8D48A;
+      border-radius: var(--r);
+      padding: 18px 22px;
+      font-size: 0.85rem; color: #5A4510; line-height: 1.7;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 500px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<main class="page-sm">
+  <div class="eyebrow">Get in Touch</div>
+  <h1 class="page-title">Contact</h1>
+  <div class="divider"></div>
+
+  <p style="color: var(--muted); font-size: 0.93rem; margin-bottom: 28px; line-height: 1.75;">
+    I'm happy to discuss research collaborations, questions about ultrasonic NDE or additive manufacturing,
+    potential opportunities, or academic inquiries. Feel free to reach out via any of the channels below.
+  </p>
+
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:adepu@purdue.edu">
+      <div class="cc-icon">✉</div>
+      <div>
+        <div class="cc-label">Email</div>
+        <div class="cc-value">adepu@purdue.edu</div>
+      </div>
+    </a>
+
+    <a class="contact-card" href="https://linkedin.com/in/harshith-adepu" target="_blank">
+      <div class="cc-icon">in</div>
+      <div>
+        <div class="cc-label">LinkedIn</div>
+        <div class="cc-value">harshith-adepu</div>
+      </div>
+    </a>
+
+    <!-- Replace with actual Google Scholar URL -->
+    <a class="contact-card" href="https://scholar.google.com" target="_blank">
+      <div class="cc-icon">↗</div>
+      <div>
+        <div class="cc-label">Google Scholar</div>
+        <div class="cc-value">Publication record</div>
+      </div>
+    </a>
+
+    <a class="contact-card" href="https://engineering.purdue.edu" target="_blank">
+      <div class="cc-icon">🏫</div>
+      <div>
+        <div class="cc-label">Institution</div>
+        <div class="cc-value">Purdue University</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Affiliation -->
+  <div class="affil-box">
+    <div class="affil-title">Affiliation</div>
+
+    <div class="affil-row">
+      <div class="affil-bullet"></div>
+      <div class="affil-text">
+        <strong>IMPULSE Lab</strong> — Purdue University, School of Mechanical Engineering<br>
+        Graduate Researcher (founding member) · Advisor: Dr. Luz D. Sotelo
+      </div>
+    </div>
+
+    <div class="affil-row">
+      <div class="affil-bullet"></div>
+      <div class="affil-text">
+        <strong>NSF Future Manufacturing Project</strong> — Ultrasonic NDE for space materials,
+        in collaboration with six faculty, industry partners, and NASA
+      </div>
+    </div>
+
+    <div class="affil-row">
+      <div class="affil-bullet"></div>
+      <div class="affil-text">
+        <strong>Purdue Manufacturing &amp; Materials Research Laboratory (MMRL)</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    Currently completing my Ph.D. dissertation (Bilsland Fellow, 2026) and open to conversations about
+    postdoctoral opportunities, research collaborations, and industry roles in NDE, AM, or materials characterization.
+  </div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="nav.js"></script>
+</body>
+</html>
